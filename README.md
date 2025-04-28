@@ -78,7 +78,10 @@ from collections import defaultdict
 d = defaultdict(list)     # Auto-initialize missing keys
 d = defaultdict(int)      # Useful for counting
 ```
-
+```
+📌 Remember
+- You cannot use a list as dictionary because lists can't be hashed.
+```
 ## Counter
 ```python
 from collections import Counter
