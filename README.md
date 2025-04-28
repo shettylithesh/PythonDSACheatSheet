@@ -64,6 +64,11 @@ nums.count(2)          # Count occurrences of 2 → 1
 nums.clear()           # Empty the list → []
 nums.extend([5,6])     # Extend with another iterable → [1,2,3,4,5,6]
 nums *= 2              # Repeat list → [1,2,3,4,1,2,3,4]
+
+# List Comprehensions (missing in original)
+matrix = [[1,2], [3,4]]
+flattened = [x for row in matrix for x in row]  # [1, 2, 3, 4]
+conditional = [x for x in range(5) if x % 2 == 0]  # [0, 2, 4]
 ```
 ## Dictionary
 Time Complexities:
@@ -93,6 +98,10 @@ d = {'a': 1, 'b': 2}
 d.popitem()            # Remove and return last (key,val) → ('b', 2)
 dict.fromkeys(['a','b'], 0)  # Create dict with keys → {'a':0, 'b':0}
 d | {'c':3}            # Merge (Python 3.9+) → {'a':1, 'b':2, 'c':3}
+
+# Dictionary Comprehensions (missing)
+square_dict = {x: x**2 for x in range(3)}  # {0: 0, 1: 1, 2: 4}
+swapped = {v: k for k, v in {'a': 1}.items()}  # {1: 'a'}
 ```
 ```
 📌 Remember
@@ -209,6 +218,10 @@ s1, s2 = {1,2}, {2,3}
 s1.isdisjoint(s2)      # True if no common elements → False
 s1.intersection_update(s2)  # In-place intersection → s1 = {2}
 s1.difference_update(s2)    # In-place difference → s1 = {1}
+
+# Set Comprehensions (missing)
+unique_chars = {c for c in 'hello'}  # {'h', 'e', 'l', 'o'}
+squares = {x**2 for x in [-2, 2]}  # {4} (duplicates removed)
 ```
 
 ## Tuples
@@ -265,6 +278,10 @@ s.endswith('on')       # True
 s.partition('th')      # ('Py', 'th', 'on')
 s.rjust(10, '*')       # '****Python' (right-justify)
 s.encode('utf-8')      # Convert to bytes → b'Python'
+
+# String One-Liners (missing)
+is_palindrome = s == s[::-1]  # True if palindrome
+alternating = 'abc' * 2  # 'abcabc' (string repetition)
 ```
 
 # Built-in Functions
