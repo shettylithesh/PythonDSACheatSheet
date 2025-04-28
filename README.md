@@ -56,7 +56,15 @@ nums[::-1]  # Reverse list
 nums[1:]    # Everything after index 1
 nums[:3]    # First three elements
 ```
+```python
+nums = [1, 2, 3, 4]
 
+# Missing but useful:
+nums.count(2)          # Count occurrences of 2 → 1
+nums.clear()           # Empty the list → []
+nums.extend([5,6])     # Extend with another iterable → [1,2,3,4,5,6]
+nums *= 2              # Repeat list → [1,2,3,4,1,2,3,4]
+```
 ## Dictionary
 Time Complexities:
 ![Dictionary Operations](https://user-images.githubusercontent.com/47276307/172330107-e68e3228-1c76-4bfb-bb38-04d18f94d5b9.jpg)
@@ -78,6 +86,14 @@ from collections import defaultdict
 d = defaultdict(list)     # Auto-initialize missing keys
 d = defaultdict(int)      # Useful for counting
 ```
+```python
+d = {'a': 1, 'b': 2}
+
+# Missing but critical:
+d.popitem()            # Remove and return last (key,val) → ('b', 2)
+dict.fromkeys(['a','b'], 0)  # Create dict with keys → {'a':0, 'b':0}
+d | {'c':3}            # Merge (Python 3.9+) → {'a':1, 'b':2, 'c':3}
+```
 ```
 📌 Remember
 - You cannot use a list as dictionary because lists can't be hashed.
@@ -95,6 +111,15 @@ c.most_common(2)      # Top 2 frequent elements
 c['a'] += 1           # Increment count
 c.update("more")      # Add counts from iterable
 c.total()             # Sum of all counts
+```
+```python
+from collections import Counter
+c = Counter('abracadabra')
+
+# Missing but handy:
+c.elements()           # Iterator: 'a'×5, 'b'×2, etc.
+c.subtract({'a':1})    # In-place subtract → Counter({'a':4})
++c                     # Remove zero/negative counts → Counter({'a':5})
 ```
 
 ## Deque
@@ -114,7 +139,15 @@ d.extend([1,2,3])    # Extend right
 d.extendleft([1,2,3])# Extend left
 d.rotate(n)          # Rotate n steps right (negative for left)
 ```
+```python
+from collections import deque
+d = deque([1,2,3])
 
+# Missing but useful:
+d.clear()              # Empty deque → deque([])
+d.maxlen               # None (or fixed max length if set)
+d.reverse()            # In-place reverse → deque([3,2,1])
+```
 ## Heapq
 
 ```python
@@ -139,6 +172,14 @@ k_smallest = heapq.nsmallest(k, nums)  # O(n * log k)
 heap = []
 heapq.heappush(heap, (priority, item))  # Sort by priority
 ```
+```python
+import heapq
+
+# Missing but practical:
+heapq.merge([1,3], [2,4])  # Merge sorted iterables → [1,2,3,4]
+heapq.heappushpop(heap, 0)  # Push 0 then pop smallest
+heapq.heapreplace(heap, 0)  # Pop smallest then push 0
+```
 
 ## Sets
 Time Complexities:
@@ -161,6 +202,14 @@ a.symmetric_difference(b)  # Elements in a OR b but NOT both
 a.issubset(b)        # True if all elements of a are in b
 a.issuperset(b)      # True if all elements of b are in a
 ```
+```python
+s1, s2 = {1,2}, {2,3}
+
+# Missing but powerful:
+s1.isdisjoint(s2)      # True if no common elements → False
+s1.intersection_update(s2)  # In-place intersection → s1 = {2}
+s1.difference_update(s2)    # In-place difference → s1 = {1}
+```
 
 ## Tuples
 ```python
@@ -174,6 +223,13 @@ t.index(2)      # Find first index of value
 # Useful Patterns
 x, y = (1, 2)   # Tuple unpacking
 coords = [(1,2), (3,4)]  # Tuple in collections
+```
+```python
+t = (1, 2, [3, 4])
+
+# Missing but important:
+hash((1,2))           # Works if all elements immutable
+t[2].append(5)        # Mutable elements can change! → (1,2,[3,4,5])
 ```
 
 ## Strings
@@ -199,6 +255,16 @@ chr(97)              # ASCII to char ('a')
 
 # Join Lists
 ''.join(['a','b'])   # Concatenate list elements
+```
+```python
+s = "Python"
+
+# Missing but useful:
+s.startswith('Py')     # True
+s.endswith('on')       # True
+s.partition('th')      # ('Py', 'th', 'on')
+s.rjust(10, '*')       # '****Python' (right-justify)
+s.encode('utf-8')      # Convert to bytes → b'Python'
 ```
 
 # Built-in Functions
@@ -228,6 +294,13 @@ set([1,2,2])         # List to set
 abs(-5)              # Absolute value
 pow(2, 3)            # Power
 round(3.14159, 2)    # Round to decimals
+```
+```python
+# Missing but essential:
+sum([1,2,3])          # Sum elements → 6
+min([1,2,3], key=lambda x: -x)  # Custom key → 3
+eval('2+3')           # Evaluate string → 5 (use cautiously!)
+locals()              # Dictionary of local variables
 ```
 
 # Advanced Topics
@@ -305,7 +378,17 @@ print(x // y)        # -2 (floor division)
 print(int(x/y))      # -1 (preferred for negative numbers)
 print(x % y)         # 1 (Python's modulo with negative numbers)
 ```
+## Structural Pattern Matching (Python 3.10+)
+```python
+match value:
+    case 1: print("One")
+    case x if x > 1: print(f"Greater than 1: {x}")
+    case _: print("Other")
 
+# Walrus Operator (Python 3.8+)
+if (n := len([1,2,3])) > 2: 
+    print(f"Length is {n}")  # → Length is 3
+```
 # Best Practices
 
 ## Documentation
