@@ -294,6 +294,7 @@ map(fn, lst)         # Apply function to all elements
 filter(fn, lst)      # Keep elements where fn returns True
 any(lst)             # True if any element is True
 all(lst)             # True if all elements are True
+len(lst)             # returns length of list, tuple, set, dict, string, etc
 
 # Binary Search (import bisect)
 bisect.bisect(lst, x)     # Find insertion point
