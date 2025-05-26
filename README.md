@@ -270,7 +270,9 @@ chr(97)              # ASCII to char ('a')
 # Join Lists
 ''.join(['a','b'])   # Concatenate list elements, can be used while doing string manipulation in O(1) instead of O(n)
 
-#Traversal - just like lists in operator, index
+#Traversal - just like lists using 'in' operator, indexes.
+
+#String Slicing - just like list slicing
 
 ```
 ```python
