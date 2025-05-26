@@ -64,7 +64,7 @@ nums.count(2)          # Count occurrences of 2 → 1
 nums.clear()           # Empty the list → []
 nums.extend([5,6])     # Extend with another iterable → [1,2,3,4,5,6]
 nums *= 2              # Repeat list → [1,2,3,4,1,2,3,4]
-a = list("abc")        # ['a', 'b', 'c']
+a = list("abc")        # ['a', 'b', 'c'] - incase string manipulation needed with extra space of O(n)
 
 # List Comprehensions (missing in original)
 matrix = [[1,2], [3,4]]
@@ -268,7 +268,12 @@ ord('a')             # Char to ASCII (97)
 chr(97)              # ASCII to char ('a')
 
 # Join Lists
-''.join(['a','b'])   # Concatenate list elements
+''.join(['a','b'])   # Concatenate list elements, can be used while doing string manipulation in O(1) instead of O(n)
+
+#Traversal
+s = "abc"
+for char in s:
+    print(char)     # Prints a b c
 ```
 ```python
 s = "Python"
