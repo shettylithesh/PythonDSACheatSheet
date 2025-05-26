@@ -270,10 +270,8 @@ chr(97)              # ASCII to char ('a')
 # Join Lists
 ''.join(['a','b'])   # Concatenate list elements, can be used while doing string manipulation in O(1) instead of O(n)
 
-#Traversal
-s = "abc"
-for char in s:
-    print(char)     # Prints a b c
+#Traversal - just like lists in operator, index
+
 ```
 ```python
 s = "Python"
