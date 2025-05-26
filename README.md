@@ -64,6 +64,7 @@ nums.count(2)          # Count occurrences of 2 → 1
 nums.clear()           # Empty the list → []
 nums.extend([5,6])     # Extend with another iterable → [1,2,3,4,5,6]
 nums *= 2              # Repeat list → [1,2,3,4,1,2,3,4]
+a = list("abc")        # ['a', 'b', 'c']
 
 # List Comprehensions (missing in original)
 matrix = [[1,2], [3,4]]
