@@ -70,6 +70,10 @@ a = list("abc")        # ['a', 'b', 'c'] - incase string manipulation needed wit
 matrix = [[1,2], [3,4]]
 flattened = [x for row in matrix for x in row]  # [1, 2, 3, 4]
 conditional = [x for x in range(5) if x % 2 == 0]  # [0, 2, 4]
+
+#list of lists
+a = [[] for i in range(3)]  #[[], [], []]
+a = [[] * 3]  #BUGGY- all lists inside have same ref
 ```
 ## Dictionary
 Time Complexities:
