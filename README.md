@@ -12,6 +12,7 @@ A Cheat Sheet 📜 to **revise** Python syntax in **less time**. Particularly us
   - [Lists](#lists)
   - [Dictionary](#dictionary)
   - [Counter](#counter)
+  - [Stack](#stack)
   - [Deque](#deque)
   - [Heapq](#heapq)
   - [Sets](#sets)
@@ -135,7 +136,28 @@ c.elements()           # Iterator: 'a'×5, 'b'×2, etc.
 c.subtract({'a':1})    # In-place subtract → Counter({'a':4})
 +c                     # Remove zero/negative counts → Counter({'a':5})
 ```
+## Stack 
+```python
+# Stack in python can be implemented with a list or deque datastructure. No other inbuilt DS exists
+#Initialize
 
+stack = []
+
+# Stack Push Operation
+stack.append(1)
+stack.append(2)
+stack.append(3)
+
+# Peek the top element of the stack
+topOfTheStack = stack[-1]  #Top of the stack is the last element in the list ie 3
+
+# Stack Pop Operation
+stack.pop()   # [1, 2]
+stack.pop()   # [1]
+
+# Length of the stack
+len(stack) 
+```
 ## Deque
 Time Complexities:
 ![Deque Operations](https://user-images.githubusercontent.com/47276307/172330115-78500420-3276-4e45-8ce3-fd668b7eb14e.jpg)
